@@ -2755,7 +2755,7 @@ input, select, textarea {
 
 		.spotlight .image {
 			width: 30%;
-			border-radius: 100%;
+			border-radius: 1000%;
 			margin: 0 3em 0 0;
 			display: block;
 			opacity: 0;
@@ -4155,4 +4155,10 @@ input, select, textarea {
 		}
 
 	}
+
+.spotlight .projects {
+	color: red;
+	/* color:rgb(5, 210, 225); */
+	margin: 0;
+}
 
