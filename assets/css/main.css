@@ -2758,13 +2758,12 @@ input, select, textarea {
 			border-radius: 1000%;
 			margin: 0 3em 0 0;
 			display: block;
-			opacity: 0;
-			animation: fadeIn 5s forwards;
+			animation: slideInLeft 3s ease-out;
 		}
 
-		@keyframes fadeIn {
-			from {opacity:0; }
-			to {opacity: 1; }
+		@keyframes slideInLeft {
+			from {transform: translateX(-100%); opacity: 0;}
+			to {transform: translateX(0); opacity: 1;}
 		}
 
 			.spotlight .image img {
@@ -2774,7 +2773,13 @@ input, select, textarea {
 			}
 
 		.spotlight .content {
-			width: 70%;
+			width: 50%;
+			animation: slideInRight 3s ease-in;
+		}
+
+		@keyframes slideInRight {
+			from {transform: translateX(100%); opacity: 0;}
+			to {transform: translateX(0); opacity: 1;}
 		}
 
 			.spotlight .content > :last-child {
@@ -2786,7 +2791,15 @@ input, select, textarea {
 			-webkit-flex-direction: row-reverse;
 			-ms-flex-direction: row-reverse;
 			flex-direction: row-reverse;
+			/* border: 1px solid black; */
 		}
+
+		/* .spotlight:nth-child(2n) {
+			-moz-flex-direction: row;
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+		} */
 
 			.spotlight:nth-child(2n) .image {
 				margin: 0 0 0 3em;
@@ -2794,6 +2807,8 @@ input, select, textarea {
 
 			.spotlight:nth-child(2n) .content {
 				text-align: right;
+				/* text-align: center; */
+
 			}
 
 	@media screen and (max-width: 736px) and (orientation: landscape) {
@@ -4156,9 +4171,12 @@ input, select, textarea {
 
 	}
 
-.spotlight .projects {
-	color: red;
-	/* color:rgb(5, 210, 225); */
-	margin: 0;
+#help {
+	border: 2px solid blue;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	flex-direction: row;
+	align-Items: right;
 }
-
